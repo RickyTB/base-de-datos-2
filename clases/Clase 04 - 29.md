@@ -30,3 +30,9 @@ FROM emp, salgrade
 WHERE sal >= losal
 AND sal <= hisal;
 ```
+
+```sql
+SELECT emp.*, salgrade.grade 
+FROM emp, salgrade
+WHERE sal BETWEEN losal AND hisal;
+```
