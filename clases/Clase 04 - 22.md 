@@ -1,0 +1,21 @@
+Escribir la instrucción SQL que presente en pantalla el nombre del empleado, el trabajo que desempeña el empleado, el nombre del jefe del empleado y el trabajo que desempeña el jefe del empleado.
+
+	SELECT a.ename EMPLEADO, a.job TRABAJO, b.ename JEFE, b.job TRABAJO_JEFE
+	FROM emp a, emp b
+	WHERE a.mgr = b.empno;
+
+Escribir la instrucción SQL que presente en pantalla el nombre del jefe y el número de empleados que le reportan a dicho jefe.
+
+	SELECT b.ename JEFE, COUNT(*) EMPLEADOS
+	FROM emp a, emp b
+	WHERE a.mgr = b.empno
+	GROUP BY b.ename;
+
+Escribir la instrucción SQL que presente en pantalla todos los datos de los empleados que realizan la función de jefes.
+
+	SELECT j.*
+	FROM emp j, emp e
+	WHERE j.empno = e.mgr
+	GROUP BY j.empno;
+
+

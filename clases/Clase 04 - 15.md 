@@ -1,0 +1,27 @@
+Escribir la instrucción SQL que presente en pantalla el nombre del departamento y el valor total que se paga por departamento.
+
+	SELECT a.dname DEPARTAMENTO, SUM(b.sal + COALESCE(b.comm, 0)) VALOR_A_PAGAR
+	FROM dept a, emp b
+	WHERE a.deptno = b.deptno
+	GROUP BY a.dname;
+
+Escribir la instrucción SQL que presente en pantalla el código del departamento y el número de obreros y vendedores que tiene cada departamento.
+
+	SELECT deptno CODIGO, job TRABAJO, count(*) TOTAL
+	FROM emp
+	WHERE job = 'CLERK' OR job = 'SALESMAN'
+	GROUP BY deptno, job;
+
+Escribir la instrucción SQL que presente en pantalla el código del departamento y el número de empleados que tienen los departamentos 10 y 30.
+
+	SELECT deptno CODIGO, count(*) TOTAL
+	FROM emp
+	WHERE deptno = 10 OR deptno = 30
+	GROUP BY deptno;
+
+Escribir la instrucción SQL que presente en pantalla el código del departamento y el número de empleados que tiene cada departamento de aquellos departamentos que tengan más de 3 empleados.
+
+	SELECT deptno CODIGO, count(*) TOTAL
+	FROM emp
+	GROUP BY deptno
+	HAVING count(*) > 3;
