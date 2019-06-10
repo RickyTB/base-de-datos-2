@@ -53,4 +53,4 @@ SELECT emp.*, salgrade.grade, dept.dname
 FROM emp, salgrade, dept
 WHERE emp.deptno = dept.deptno
 AND sal BETWEEN losal AND hisal;
-``
+```
